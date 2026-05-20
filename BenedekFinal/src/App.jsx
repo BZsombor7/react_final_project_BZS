@@ -1,12 +1,22 @@
 import { useState } from 'react'
 import './App.css'
+import NavBar from './components/NavBar'
+import Login from './components/Login'
+import { AuthProvider } from './context/loginContext'
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-    Cisco
+    <AuthProvider>
+    <NavBar/>
+    <Routes>
+      <Route path="/"/>
+      <Route path="form"/>
+      <Route path="login" element={<Login/>}/>
+    </Routes>
+    </AuthProvider>
     </>
   )
 }
