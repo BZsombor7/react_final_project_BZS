@@ -1,6 +1,6 @@
 import WebItem from "./WebItem";
 
-const WebList = ({ webData }) => {
+const WebList = ({ webData, refreshData }) => {
   const safeData = Array.isArray(webData) ? webData : [];
 
   if (safeData.length === 0) {
@@ -10,7 +10,11 @@ const WebList = ({ webData }) => {
   return (
     <div className="web-list">
       {safeData.map((item) => (
-        <WebItem key={item.id} item={item} />
+        <WebItem 
+          key={item.id} 
+          item={item} 
+          refreshData={refreshData}   // 🔥 átadjuk
+        />
       ))}
     </div>
   );

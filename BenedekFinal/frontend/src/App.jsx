@@ -34,9 +34,7 @@ function App() {
       <NavBar />
 
       <Routes>
-        <Route path="/" element={
-          <WebList webData={webData} />
-        } />
+        <Route path="/" element={<WebList webData={webData} refreshData={refreshData}/>}/>
 
         <Route path="/form" element={
           <WebForm refreshData={refreshData} />
