@@ -14,7 +14,7 @@ function App() {
     try {
       const res = await fetch('http://localhost:3000/products')
       const data = await res.json()
-      setWebData(data.products)
+      setWebData(data)
     } catch (err) {
       console.log(err)
     }

@@ -1,5 +1,7 @@
 import Swal from 'sweetalert2'
 import { useAuth } from '../context/loginContext'
+import Card from '../wrappers/Card'
+import styles from './WebItem.module.css'
 
 const WebItem = ({ item, refreshData }) => {
   const { isLogged } = useAuth()
@@ -19,27 +21,30 @@ const WebItem = ({ item, refreshData }) => {
   }
 
   return (
-    <div style={{ border: '1px solid gray', margin: 10, padding: 10 }}>
-      <h3>{item.name}</h3>
-      <p>{item.description}</p>
+    <Card>
+      <div className={styles.container}>
+        <h3 className={styles.name}>{item.name}</h3>
 
-      {item.img_url && (
-        <img 
-          src={item.img_url} 
-          alt={item.name} 
-          style={{ width: "200px", borderRadius: "8px" }}
-        />
-      )}
+        {item.img_url && (
+          <img 
+            src={item.img_url} 
+            alt={item.name} 
+            className={styles.image}
+          />
+        )}
 
-      <p><strong>Ár:</strong> {item.price} Ft</p>
-      <p><strong>Készlet:</strong> {item.stock} db</p>
+        <p className={styles.description}>{item.description}</p>
 
-      {isLogged && (
-        <button onClick={handleDelete}>
-          Törlés
-        </button>
-      )}
-    </div>
+        <p className={styles.price}><strong>Ár:</strong> {item.price} Ft</p>
+        <p className={styles.stock}><strong>Készlet:</strong> {item.stock} db</p>
+
+        {isLogged && (
+          <button className={styles.deleteBtn} onClick={handleDelete}>
+            Törlés
+          </button>
+        )}
+      </div>
+    </Card>
   )
 }
 

@@ -1,0 +1,40 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.name {
+  font-size: 22px;
+  font-weight: 600;
+  color: black;
+}
+
+.image {
+  width: 100%;
+  max-width: 300px;
+  margin: auto;
+}
+
+.description {
+  font-size: 14px;
+  color: #2c2c2c;
+}
+
+.price, .stock {
+  font-size: 15px;
+  color: #141414;
+}
+
+.deleteBtn {
+  padding: 10px;
+  background-color: #ff4a4a;
+  color: white;
+  border: 0px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.deleteBtn:hover {
+  background-color: #812a2a;
+}

@@ -1,5 +1,7 @@
 import { useRef } from 'react'
 import Swal from 'sweetalert2'
+import Card from '../wrappers/Card'
+import styles from './WebForm.module.css'
 
 const WebForm = ({ refreshData }) => {
   const nameRef = useRef()
@@ -44,17 +46,41 @@ const WebForm = ({ refreshData }) => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>Új kebab felvétele</h2>
+    <Card>
+      <div className={styles.container}>
+        <h2 className={styles.title}>Új kebab felvétele</h2>
 
-      <input ref={nameRef} placeholder="Kebab neve" />
-      <textarea ref={descriptionRef} placeholder="Leírás" />
-      <input ref={imgRef} placeholder="Kép URL" />
-      <input ref={priceRef} type="number" placeholder="Ár" />
-      <input ref={stockRef} type="number" placeholder="Készlet" />
+        <form className={styles.form} onSubmit={handleSubmit}>
+          
+          <div className={styles.formGroup}>
+            <label className={styles.label}>Kebab neve*</label>
+            <input className={styles.input} ref={nameRef} />
+          </div>
 
-      <button>Mentés</button>
-    </form>
+          <div className={styles.formGroup}>
+            <label className={styles.label}>Leírás</label>
+            <textarea className={styles.textarea} ref={descriptionRef}></textarea>
+          </div>
+
+          <div className={styles.formGroup}>
+            <label className={styles.label}>Kép URL</label>
+            <input className={styles.input} ref={imgRef} />
+          </div>
+
+          <div className={styles.formGroup}>
+            <label className={styles.label}>Ár (Ft)*</label>
+            <input className={styles.input} type="number" ref={priceRef} />
+          </div>
+
+          <div className={styles.formGroup}>
+            <label className={styles.label}>Készlet (db)*</label>
+            <input className={styles.input} type="number" ref={stockRef} />
+          </div>
+
+          <button className={styles.button}>Mentés</button>
+        </form>
+      </div>
+    </Card>
   )
 }
 
