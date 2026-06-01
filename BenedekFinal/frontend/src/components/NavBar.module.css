@@ -1,21 +1,41 @@
-.navbar{
-    position:absolute;
-    left: 0;
-    top: 1rem;
-}
-.navbar>a{
-    padding-left: 1rem;
-    margin-top: 3rem;
+.navbar {
+  display: flex;
+  gap: 20px;
+  padding: 15px 25px;
+  background-color: #f0f4ff;
+  border-bottom: 2px solid #d0d8f0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-.link{
-    color:rgb(6, 141, 107);
+.link {
+  color: #006b5c;
+  font-size: 1.1rem;
+  text-decoration: none;
+  font-weight: 500;
 }
-.link:hover{
-    color: rgb(0, 73, 55);
+
+.link:hover {
+  color: #004437;
 }
-.active, .active:hover{
-    color: rgb(0, 73, 55);
-    font-weight: 600;
-    font-size: 1.5rem;
+
+.active {
+  color: #004437;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.logoutBtn {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.logoutBtn:hover {
+  background-color: #d93636;
 }
