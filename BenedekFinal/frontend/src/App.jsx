@@ -6,6 +6,8 @@ import WebList from './components/WebList'
 import { AuthProvider } from './context/loginContext'
 import { Routes, Route } from 'react-router-dom'
 import ProtectedRoute from './components/ProtectedRoute';
+import Details from './components/Details'
+
 
 function App() {
   const [webData, setWebData] = useState([])
@@ -41,6 +43,7 @@ function App() {
         } />
 
         <Route path="/login" element={<Login />} />
+        <Route path="/details/:id" element={<Details webData={webData} />} />
       </Routes>
     </AuthProvider>
     </>

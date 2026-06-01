@@ -2,6 +2,7 @@ import Swal from 'sweetalert2'
 import { useAuth } from '../context/loginContext'
 import Card from '../wrappers/Card'
 import styles from './WebItem.module.css'
+import { NavLink } from "react-router-dom";
 
 const WebItem = ({ item, refreshData }) => {
   const { isLogged } = useAuth()
@@ -43,6 +44,10 @@ const WebItem = ({ item, refreshData }) => {
             Törlés
           </button>
         )}
+        <NavLink to={`/details/${item.id}`}>
+        <button className={styles.detailsBtn}>Részletek</button>
+        </NavLink>
+
       </div>
     </Card>
   )
