@@ -5,7 +5,7 @@
 }
 
 .title {
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 700;
   text-align: center;
   color: #2d2d2d;
@@ -13,18 +13,22 @@
 
 .image {
   width: 100%;
-  max-width: 400px;
+  max-width: 350px;
   border-radius: 10px;
   margin: 0 auto;
 }
 
 .description {
-  font-size: 16px;
+  font-size: 15px;
   color: #444;
+  line-height: 1.4;
 }
 
-.info {
-  font-size: 18px;
+.infoBox {
+  background: #eef3ff;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 16px;
   color: #333;
 }
 

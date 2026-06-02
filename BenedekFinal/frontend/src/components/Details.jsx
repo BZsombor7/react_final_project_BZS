@@ -25,17 +25,16 @@ function Details({ webData }) {
           />
         )}
 
-        <p className={styles.description}>
-          <strong>Leírás:</strong> {product.description || "Nincs megadva"}
-        </p>
+        {product.description && (
+          <p className={styles.description}>
+            <strong>Leírás:</strong> {product.description}
+          </p>
+        )}
 
-        <p className={styles.info}>
-          <strong>Ár:</strong> {product.price} Ft
-        </p>
-
-        <p className={styles.info}>
-          <strong>Készlet:</strong> {product.stock} db
-        </p>
+        <div className={styles.infoBox}>
+          <p><strong>Ár:</strong> {product.price} Ft</p>
+          <p><strong>Készlet:</strong> {product.stock} db</p>
+        </div>
 
         <button className={styles.button} onClick={() => navigate(-1)}>
           Vissza

@@ -36,18 +36,15 @@ const WebItem = ({ item, refreshData }) => {
 
         <p className={styles.description}>{item.description}</p>
 
-        <p className={styles.price}><strong>Ár:</strong> {item.price} Ft</p>
-        <p className={styles.stock}><strong>Készlet:</strong> {item.stock} db</p>
+        <NavLink to={`/details/${item.id}`}>
+          <button className={styles.detailsBtn}>Részletek</button>
+        </NavLink>
 
         {isLogged && (
           <button className={styles.deleteBtn} onClick={handleDelete}>
             Törlés
           </button>
         )}
-        <NavLink to={`/details/${item.id}`}>
-        <button className={styles.detailsBtn}>Részletek</button>
-        </NavLink>
-
       </div>
     </Card>
   )

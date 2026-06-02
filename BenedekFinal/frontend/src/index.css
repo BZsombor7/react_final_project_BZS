@@ -109,3 +109,8 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 }
+body {
+  background: linear-gradient(135deg, #e8f1ff, #f7faff);
+  margin: 0;
+  font-family: Arial, sans-serif;
+}

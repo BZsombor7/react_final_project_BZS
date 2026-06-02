@@ -2,7 +2,8 @@
   display: flex;
   gap: 20px;
   padding: 15px 25px;
-  background-color: #f0f4ff;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(6px);
   border-bottom: 2px solid #d0d8f0;
   position: sticky;
   top: 0;
@@ -14,6 +15,7 @@
   font-size: 1.1rem;
   text-decoration: none;
   font-weight: 500;
+  transition: 0.2s;
 }
 
 .link:hover {
@@ -23,19 +25,20 @@
 .active {
   color: #004437;
   font-weight: 700;
-  font-size: 1.3rem;
+  font-size: 1.25rem;
 }
 
 .logoutBtn {
-  background-color: #ff4d4d;
+  background-color: #ff6b6b;
   color: white;
   border: none;
   padding: 8px 14px;
   border-radius: 6px;
   cursor: pointer;
   font-weight: 600;
+  transition: 0.2s;
 }
 
 .logoutBtn:hover {
-  background-color: #d93636;
+  background-color: #d95353;
 }
