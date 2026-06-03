@@ -9,13 +9,7 @@ const WebList = ({ webData, refreshData }) => {
 
   return (
     <div className="web-list">
-      {safeData.map((item) => (
-        <WebItem 
-          key={item.id} 
-          item={item} 
-          refreshData={refreshData}   // 🔥 átadjuk
-        />
-      ))}
+      {safeData.map((item) => (<WebItem key={item.id} item={item} refreshData={refreshData}/>))}
     </div>
   );
 };

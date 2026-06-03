@@ -182,9 +182,3 @@
     border-right-color: var(--border);
   }
 }
-
-body {
-  background:blue;
-  margin: 0;
-  font-family: Arial, sans-serif;
-}

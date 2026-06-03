@@ -2,6 +2,7 @@ import { useRef } from 'react';
 import styles from './Login.module.css';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/loginContext';
+import Swal from 'sweetalert2'
 
 const Login = () => {
     const usernameRef = useRef();
@@ -10,7 +11,7 @@ const Login = () => {
     const navigate = useNavigate()
 
       const handleSubmit = async (e) => {
-    e.preventDefault();
+        e.preventDefault();
     if (usernameRef.current.value !== "") {
       try {
         const response = await fetch('http://localhost:3000/login', {
@@ -30,11 +31,11 @@ const Login = () => {
           login();
           navigate('/form');
         } else {
-          console.error('Sikertelen bejelentkezés');
+          Swal.fire('Hiba', 'A megadott adatok nem megfelelőek!', 'error')
         }
 
       } catch (error) {
-        console.error('Error:', error);
+        Swal.fire('Hiba', 'A megadott adatok nem megfelelőek!', 'error')
       }
     }
   };
@@ -45,18 +46,8 @@ const Login = () => {
     <div className={styles.container}>
       <h2>Bejelentkezés</h2>
       <form onSubmit={handleSubmit} className={styles.form}>
-        <input
-          type="text"
-          placeholder="Felhasználónév"
-          ref={usernameRef}
-          className={styles.input}
-        />
-        <input
-          type="password"
-          placeholder="Jelszó"
-          className={styles.input}
-          ref={passwordRef}
-        />
+        <input type="text" placeholder="Felhasználónév" ref={usernameRef} className={styles.input}/>
+        <input type="password" placeholder="Jelszó" className={styles.input} ref={passwordRef}/>
         <button type="submit" className={styles.button}>Belépés</button>
       </form>
     </div>

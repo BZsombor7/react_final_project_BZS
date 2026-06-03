@@ -23,7 +23,7 @@
   line-height: 1.4;
 }
 
-.detailsBtn {
+.detaButton {
   padding: 8px 12px;
   background-color: #4f8cff;
   color: white;
@@ -34,11 +34,11 @@
   width: 120px;
 }
 
-.detailsBtn:hover {
+.detaButton:hover {
   background-color: #3a6fd6;
 }
 
-.deleteBtn {
+.delButton {
   padding: 8px 12px;
   background-color: #ff4d4d;
   color: white;
@@ -49,6 +49,6 @@
   width: 120px;
 }
 
-.deleteBtn:hover {
+.delButton:hover {
   background-color: #d93636;
 }

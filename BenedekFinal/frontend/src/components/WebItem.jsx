@@ -26,25 +26,15 @@ const WebItem = ({ item, refreshData }) => {
       <div className={styles.container}>
         <h3 className={styles.name}>{item.name}</h3>
 
-        {item.img_url && (
-          <img 
-            src={item.img_url} 
-            alt={item.name} 
-            className={styles.image}
-          />
-        )}
+        {item.img_url && (<img src={item.img_url} alt={item.name} className={styles.image}/>)}
 
         <p className={styles.description}>{item.description}</p>
 
         <NavLink to={`/details/${item.id}`}>
-          <button className={styles.detailsBtn}>Részletek</button>
+          <button className={styles.detaButton}>Részletek</button>
         </NavLink>
 
-        {isLogged && (
-          <button className={styles.deleteBtn} onClick={handleDelete}>
-            Törlés
-          </button>
-        )}
+        {isLogged && (<button className={styles.delButton} onClick={handleDelete}>Törlés</button>)}
       </div>
     </Card>
   )

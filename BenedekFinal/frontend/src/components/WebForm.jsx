@@ -52,27 +52,27 @@ const WebForm = ({ refreshData }) => {
 
         <form className={styles.form} onSubmit={handleSubmit}>
           
-          <div className={styles.formGroup}>
+          <div className={styles.info}>
             <label className={styles.label}>Kebab neve*</label>
             <input className={styles.input} ref={nameRef} />
           </div>
 
-          <div className={styles.formGroup}>
+          <div className={styles.info}>
             <label className={styles.label}>Leírás</label>
             <textarea className={styles.textarea} ref={descriptionRef}></textarea>
           </div>
 
-          <div className={styles.formGroup}>
+          <div className={styles.info}>
             <label className={styles.label}>Kép URL</label>
             <input className={styles.input} ref={imgRef} />
           </div>
 
-          <div className={styles.formGroup}>
+          <div className={styles.info}>
             <label className={styles.label}>Ár (Ft)*</label>
             <input className={styles.input} type="number" ref={priceRef} />
           </div>
 
-          <div className={styles.formGroup}>
+          <div className={styles.info}>
             <label className={styles.label}>Készlet (db)*</label>
             <input className={styles.input} type="number" ref={stockRef} />
           </div>

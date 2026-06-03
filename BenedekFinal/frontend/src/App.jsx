@@ -5,7 +5,6 @@ import WebForm from './components/WebForm'
 import WebList from './components/WebList'
 import { AuthProvider } from './context/loginContext'
 import { Routes, Route } from 'react-router-dom'
-import ProtectedRoute from './components/ProtectedRoute';
 import Details from './components/Details'
 
 
@@ -34,16 +33,11 @@ function App() {
     <>
     <AuthProvider>
       <NavBar />
-
       <Routes>
         <Route path="/" element={<WebList webData={webData} refreshData={refreshData}/>}/>
-
-        <Route path="/form" element={
-          <WebForm refreshData={refreshData} />
-        } />
-
-        <Route path="/login" element={<Login />} />
-        <Route path="/details/:id" element={<Details webData={webData} />} />
+        <Route path="/form" element={<WebForm refreshData={refreshData}/>}/>
+        <Route path="/login" element={<Login/>}/>
+        <Route path="/details/:id" element={<Details webData={webData}/>}/>
       </Routes>
     </AuthProvider>
     </>
